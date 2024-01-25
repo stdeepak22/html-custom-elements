@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Custom Element - Chapter 1</title>
+    <script src="./index.js" type="module"></script>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- using our first custom element - "app-header" -->
+    <app-header title="ABC"></app-header>
+
+    <div class="body-container">
+
+        <!-- html element "button", "index.js" file has logic to show the custom element modal - "app-modal" -->
+        <button id="btn1">show modal 1</button>
+
+        <!-- another custom element - "app-modal" with "id", and "heading" -->
+        <app-modal id="modal-1" heading="Modal 1"></app-modal>
+    </div>
+
+</body>
+
+</html>
