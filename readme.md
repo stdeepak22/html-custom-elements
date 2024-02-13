@@ -26,3 +26,63 @@ Story doesn't end here, we will have more concept around this. Eg. -
 ``` javascript
 💕💕 Stay Tuned!!
 ```
+
+***
+***
+
+## chapter-1 ([link](./chapter-1/)) - new element use global css, not shadow-dom.
+in this chapter we will create new html element, not the extension of the existing element. Also, it will use the global css, not a shadow dom.
+
+this contains two components -
+* Header
+    ``` javascript
+    export default class Header extends HTMLElement {
+        connectedCallback() {
+            this.render();
+        }
+
+        render() {
+            ...
+            ...
+            this.appendChild(child); //append some html node
+        }
+    }
+    ```
+    which is registered as our first custom element called `app-header`
+
+    ``` javascript
+    window.customElements.define('app-header', Header);
+    ```
+
+* Modal
+    ``` javascript
+    export default class Modal extends HTMLElement {
+        connectedCallback() {
+            this.render();
+        }
+
+        show() {
+            this.querySelector('.modal-wrapper')?.classList.add('show');
+        }
+
+        hide() {
+            this.querySelector('.modal-wrapper')?.classList.remove('show');
+        }
+
+        render() {
+            ...
+            ...
+            this.appendChild(child); //append some html node
+        }
+    }
+    ```
+    which is registered as another custom html element called "app-modal"
+    ``` javascript
+    window.customElements.define('app-modal', Modal);
+    ```
+
+Thats it, now we can use it like any other html element 
+``` html
+<app-header title="Github"></app-header>
+<app-modal id="modal-1" heading="Modal 1"></app-modal>
+```

@@ -1,4 +1,4 @@
-export default class Modeal extends HTMLElement {
+export default class Modal extends HTMLElement {
     connectedCallback() {
         this.render();
     }
